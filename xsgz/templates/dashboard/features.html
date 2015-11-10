@@ -1,0 +1,14 @@
+<div class="container scroll-container-small">
+    <div class="page-form">
+        <h1 class="font-ht" translate="MESSAGES.FEATURES_TITLE"></h1>
+        <div class="form-container">
+            <ul class="features-list">
+                <li ng-repeat="(key, value) in featureKeys">
+                    <a ng-click="launchFeature(key, value)"><span class="font-ht">{{ 'MESSAGES.' + value | translate}}</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+

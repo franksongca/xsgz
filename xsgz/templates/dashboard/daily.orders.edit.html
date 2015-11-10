@@ -1,0 +1,70 @@
+<div class="container scroll-container-small">
+    <div class="row page-content">
+        <h1 class="font-ht" translate="MESSAGES.EDIT_ORDERS_TITLE"></h1>
+
+        <!--div class="row btn-stock-out-sheet-container">
+            <button class="btn btn-default btn-block-custom" type="button" ng-click="getOrders()">
+                <span translate="MESSAGES.READ_DAILY_ORDERS" class="font-ht"></span>
+            </button>
+        </div-->
+        <div ng-show="!orders || !orders.length">
+            <h2 class="font-ht" style="color: red;" translate="ERROR_MESSAGES.NO_DATA_FOR_THE_DAY"></h2>
+        </div>
+
+        <div ng-show="!!orders && orders.length">
+            <div ng-repeat="orderGroup in orders" class="order-list-content">
+                <ul>
+                    <li>
+                        <div class="row orders-leading-bar">
+                            <div class="col-xs-4 left-align">
+                                <div class="col-xs-5 left-align"><span translate="MESSAGES.CUSTOMER_NAME" class="font-ht"></span></div>
+                                <div class="col-xs-7 left-align">{{orderGroup.orderInfo.receiverName}}</div>
+                            </div>
+                            <div class="col-xs-4 left-align">
+                                <div class="col-xs-5"><span translate="MESSAGES.TABLE_PHONE" class="font-ht"></span></div>
+                                <div class="col-xs-7">{{orderGroup.orderInfo.telephone}}</div>
+                            </div>
+                            <div class="col-xs-3 left-align" style="text-align: right;">
+                                <div class="col-xs-9"><span translate="MESSAGES.ORDER_NUMBER" class="font-ht"></span></div>
+                                <div class="col-xs-3">{{orderGroup.orderInfo.giftPackage ? 1 : orderGroup.orderList.length}}</div>
+                            </div>
+                            <div class="col-xs-1 right-align">
+                                <a ng-show="orderGroup.orderInfo.giftPackage" ng-click="selectGiftPackage(orderGroup.orderInfo.orderId, orderGroup.orderInfo.giftId)">
+                                    <img src="/xsgz/assets/images/gift_icon.png" height="30">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row order-details-container comment-input">
+                            <div class="col-xs-5 left-align">
+                                <div class="col-xs-4"><span translate="MESSAGES.COMMENTS" class="font-ht"></span>: </div>
+                                <div class="col-xs-8"><input type="text" ng-model="orderGroup.orderInfo.comments"></div>
+                            </div>
+                            <div class="col-xs-5 left-align">
+                                <div class="col-xs-5"><span translate="MESSAGES.CUSTOMER_COMMENTS" class="font-ht"></span>: </div>
+                                <div class="col-xs-7"><input type="text" ng-model="orderGroup.orderInfo.customerComments"></div>
+                            </div>
+                            <div class="col-xs-2 right-align">
+                                <button type="button"
+                                        ng-click="updateComments(orderGroup.orderInfo.orderId,
+                                            orderGroup.orderInfo.comments,
+                                            orderGroup.orderInfo.customerComments)"
+                                        translate="MESSAGES.SAVE_COMMENTS" class="font-ht">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row order-details-container">
+                            <ul>
+                                <li ng-repeat="order in orderGroup.orderList" ng-show="!!order.quantity">
+                                    <div class="row orders-details">
+                                        <div class="col-xs-9 left-align">{{order.productTitle}}</div>
+                                        <div class="col-xs-3"><span translate="MESSAGES.TABLE_QUANTITY" class="font-ht"></span><span ng-show="orderGroup.orderInfo.giftPackage" translate="MESSAGES.SMALL_BAG" class="font-ht"></span>:{{order.quantity}}</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

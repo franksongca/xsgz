@@ -1,0 +1,165 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <base href="/">
+  <title>XSGZ Admin</title>
+  <link rel="icon" type="image/ico" href="/xsgz/assets/images/favicon.png">
+  <meta name="description" content="A social media management solution for businesses to manage their social media.">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css css/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="/xsgz/bower_components/slick-carousel/slick/slick.css" />
+  <link rel="stylesheet" href="/xsgz/bower_components/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="/xsgz/bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- endbower -->
+  <!-- /build -->
+  <!--link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"-->
+
+    <!-- build:css css/style.css -->
+  <link rel="stylesheet" href="/xsgz/app/styles/skSpinner.css">
+  <link rel="stylesheet" href="/xsgz/app/styles/style.css">
+  <link rel="stylesheet" href="/xsgz/app/styles/animations.css">
+    <!-- /build -->
+
+</head>
+<body ng-app="xsgzApp" ng-controller="MainCtrl">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
+<!-- Add your site or application content here -->
+
+<div class="main-container" ui-view="">
+</div>
+<ng-spinner
+    class="home-spinner-bg"
+    size="120"
+    marginTop="calc(50vh - 120px)"
+    type="main-spinner"
+    hide="no"
+    margintop="0">
+</ng-spinner>
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-55462102-1');
+  ga('send', 'pageview');
+</script>
+
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/xsgz/app/styles/iestyle.css">
+<script src="/xsgz/bower_components/es5-shim/es5-shim.js"></script>
+<script src="/xsgz/bower_components/json3/lib/json3.min.js"></script>
+<![endif]-->
+
+<!-- build:js https://code.jquery.com/jquery-2.1.3.min.js -->
+<script src="/xsgz/bower_components/jquery/dist/jquery.js"></script>
+<!-- /build -->
+
+<!-- build:js js/lib/angular.min.js -->
+<script src="/xsgz/bower_components/angular/angular.min.js"></script>
+<!-- /build -->
+
+
+<!-- build:js js/lib/libs.min.js -->
+<!-- bower:js -->
+<script src="/xsgz/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="/xsgz/bower_components/angular-resource/angular-resource.js"></script>
+<script src="/xsgz/bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="/xsgz/bower_components/slick-carousel/slick/slick.min.js"></script>
+<script src="/xsgz/bower_components/angular-slick/dist/slick.js"></script>
+<script src="/xsgz/bower_components/angular-translate/angular-translate.js"></script>
+<script src="/xsgz/bower_components/angular-translate/angular-locale_zh-cn.js"></script>
+<script src="/xsgz/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="/xsgz/bower_components/lodash/lodash.min.js"></script>
+<script src="/xsgz/bower_components/moment/moment.js"></script>
+<script src="/xsgz/bower_components/angular-elastic/elastic.js"></script>
+<script src="/xsgz/bower_components/json3/lib/json3.js"></script>
+<script src="/xsgz/bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="/xsgz/bower_components/angular-file-upload/angular-file-upload.js"></script>
+<script src="/xsgz/bower_components/angularjs-modal-service/src/createDialog.js"></script>
+<script src="/xsgz/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/xsgz/bower_components/angular-mocks/angular-mocks.js"></script>
+<!-- endbower -->
+<!-- /build -->
+
+<!-- build:js js/app.js -->
+<script src="/xsgz/app/script/app.js"></script>
+<!-- /build -->
+<!-- build:js js/xsgz.min.js -->
+<script src="/xsgz/app/script/config/constants.js"></script>
+<script src="/xsgz/app/script/config/translation.js"></script>
+
+<script src="/xsgz/app/script/factories/app-manager.js"></script>
+<script src="/xsgz/app/script/factories/translate.js"></script>
+<script src="/xsgz/app/script/factories/main-menu-data.js"></script>
+<script src="/xsgz/app/script/factories/features-header-menu-data.js"></script>
+<script src="/xsgz/app/script/factories/footer-menu-data.js"></script>
+<script src="/xsgz/app/script/factories/data/upload.file.factory.js"></script>
+<script src="/xsgz/app/script/factories/simple.modal.js"></script>
+
+<script src="/xsgz/app/script/factories/home/login.factory.js"></script>
+<script src="/xsgz/app/script/factories/home/register.factory.js"></script>
+<script src="/xsgz/app/script/factories/home/forgot.password.send.email.js"></script>
+
+<script src="/xsgz/app/script/factories/data/orders.data.js"></script>
+<script src="/xsgz/app/script/factories/data/summary.data.js"></script>
+<script src="/xsgz/app/script/factories/data/products.data.js"></script>
+<script src="/xsgz/app/script/factories/data/gift.packages.data.js"></script>
+
+<script src="/xsgz/app/script/directives/ng-spinner.js"></script>
+<script src="/xsgz/app/script/directives/bottom-panel.js"></script>
+<script src="/xsgz/app/script/directives/password.check.js"></script>
+<script src="/xsgz/app/script/directives/upload.file.custom.change.event.js"></script>
+
+<script src="/xsgz/app/script/controllers/main.controller.js"></script>
+<script src="/xsgz/app/script/controllers/home/home.base.controller.js"></script>
+<script src="/xsgz/app/script/controllers/home/home.main.controller.js"></script>
+<script src="/xsgz/app/script/controllers/home/login.controller.js"></script>
+<script src="/xsgz/app/script/controllers/home/registration.controller.js"></script>
+<script src="/xsgz/app/script/controllers/home/forgot.password.controller.js"></script>
+<script src="/xsgz/app/script/controllers/footer.controller.js"></script>
+<script src="/xsgz/app/script/controllers/header.controller.js"></script>
+
+<script src="/xsgz/app/script/controllers/components/gift.packages.base.controller.js"></script>
+<script src="/xsgz/app/script/controllers/components/gift.packages.modal.controller.js"></script>
+<script src="/xsgz/app/script/controllers/components/gift.packages.page.controller.js"></script>
+
+<script src="/xsgz/app/script/controllers/dashboard/dashboard.header.controller.js"></script>
+<script src="/xsgz/app/script/controllers/dashboard/daily.orders.edit.controller.js"></script>
+<script src="/xsgz/app/script/controllers/dashboard/print.daily.orders.controller.js"></script>
+<script src="/xsgz/app/script/controllers/dashboard/daily.orders.summary.controller.js"></script>
+<script src="/xsgz/app/script/controllers/dashboard/daily.gift.orders.summary.controller.js"></script>
+<script src="/xsgz/app/script/controllers/dashboard/daily.small.bags.summary.controller.js"></script>
+<script src="/xsgz/app/script/controllers/dashboard/feature6.controller.js"></script>
+<script src="/xsgz/app/script/controllers/dashboard/features.controller.js"></script>
+<script src="/xsgz/app/script/controllers/dashboard/reset.password.controller.js"></script>
+
+<script src="/xsgz/app/script/routers/main.js"></script>
+<!-- /build -->
+
+</body>
+</html>

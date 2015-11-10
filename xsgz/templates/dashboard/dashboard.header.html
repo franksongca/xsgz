@@ -1,0 +1,47 @@
+<div class="header-bar">
+    <ng-include src="'/xsgz/templates/dashboard/dashboard.header.top.html'"></ng-include>
+
+    <div class="func-bar">
+    </div>
+
+    <div ng-show="actionBarConfig.uploadButton">
+        <button class="upload-csv-button" type="button">
+            <span translate="MESSAGES.UPLOAD_SCV_BUTTON" class="font-ht"></span>
+        </button>
+        <div class="upload-button-container">
+            <input id="input-csv" class="form-control pointer"
+                   data-toggle="tooltip"
+                   title="upload a .csv file"
+                   custom-on-change="onFileSelect"
+                   name="report-csv"
+                   accept=".csv"
+                   type="file"/>
+        </div>
+    </div>
+    <div class="row data-picker-container" ng-show="actionBarConfig.datePicker">
+        <p class="input-group">
+            <input type="text"
+                   class="form-control date-picker-input"
+                   uib-datepicker-popup="{{format}}"
+                   ng-model="dt.value"
+                   is-open="status.opened"
+                   min-date="minDate"
+                   max-date="maxDate"
+                   datepicker-options="dateOptions"
+                   ng-required="true"
+                   close-text="Close" />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default date-picker-button" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                </span>
+        </p>
+    </div>
+
+    <div>
+        <button class="action-bar-button action-bar-print-button" type="button" ng-click="print()" ng-show="actionBarConfig.printButton">
+            <span translate="MESSAGES.BUTTON_PRINT" class="font-ht"></span>
+        </button>
+        <button class="action-bar-button action-bar-return-button" type="button" ng-show="actionBarConfig.returnButton" ng-click="return()">
+            <span translate="MESSAGES.BUTTON_RETURN" class="font-ht"></span>
+        </button>
+    </div>
+</div>

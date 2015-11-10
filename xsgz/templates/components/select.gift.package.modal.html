@@ -1,0 +1,38 @@
+<div class="modal-header">
+    <div class="modal-img"><img src="/xsgz/assets/images/gift-md.png" style="margin-top: -10px;"/></div>
+    <h2 class="modal-title modal-title-inline font-ht">{{mode === 'model' ? 'MESSAGES.SELECT_GIFT_PACKAGE' : "MESSAGES.EDIT_CREATE_GIFT_PACKAGE" | translate}}</h2>
+    <button type="button" class="close" data-dismiss="modal" ng-click="onClick('CANCEL')" ng-show="mode === 'model'"><span aria-hidden="true" class="modal_button">&times;</span><span class="sr-only">Close</span></button>
+    <div class="package-nav-buttons">
+        <button ng-click="goPrevPackage()"><i class="fa fa-arrow-left"></i></button>
+        <span>{{packageInfo.currentPackage + 1}}</span>
+        <button ng-click="goNextPackage()"><i class="fa fa-arrow-right"></i></button>
+    </div>
+</div>
+<div class=" modal-body">
+    <div class="package-name-value font-ht"><input type="text" ng-model="packageInfo.packageName" ng-readonly="mode === 'model'"></div> <div class="total-value">{{'MESSAGES.TOTAL_VALUE' | translate}}: {{total}}{{'MESSAGES.DOLLAR' | translate}}</div>
+    <hr>
+
+    <div class="row product-container-label">
+        <div class="col-xs-3">{{'MESSAGES.LABEL_NAME' | translate}}</div>
+        <div class="col-xs-3">{{'MESSAGES.LABEL_UNIT_PRICE' | translate}}</div>
+        <div class="col-xs-3">{{'MESSAGES.LABEL_QUANTITY' | translate}}</div>
+        <div class="col-xs-3">{{'MESSAGES.LABEL_VALUE' | translate}}</div>
+    </div>
+
+    <ul class="products-in-gift-package">
+        <li ng-repeat="product in products track by $index">
+            <div class="row product-container">
+                <div class="col-xs-3" style="text-align: left;">{{product.unitName}}</div>
+                <div class="col-xs-3" style="text-align: right; margin-right: -10px;">{{product.unitPrice}}</div>
+                <div class="col-xs-3" style="text-align: center;">
+                    <input type="number" name="quantity" min="0" max="9" maxlength="2" style="width:35px;" ng-model="product.quantity" ng-change="quantityChanged($index)" ng-disabled="mode === 'model'">
+                </div>
+                <div class="col-xs-3" style="text-align: right; margin-right: -10px;">{{(product.unitPrice*product.quantity).toFixed(2)}}</div>
+            </div>
+        </li>
+    </ul>
+
+</div>
+<div class="modal-footer">
+    <button class="btn" type="button" ng-repeat="button in buttons" ng-class="{'btn-primary': button.action === 'OK'}" ng-click="onClick(button.action)">{{'MESSAGES.'+ button.key | translate}}</button>
+</div>

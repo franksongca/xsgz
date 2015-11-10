@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <div class="modal-icon" ng-hide="!iconSrc"><img ng-src="{{iconSrc}}"/></div><h2 class="modal-title font-ht">{{'MESSAGES.'+ titleKey | translate}}</h2>
+    <button type="button" class="close" data-dismiss="modal" ng-click="onClick('CANCEL')"><span aria-hidden="true" class="modal_button">&times;</span><span class="sr-only">Close</span></button>
+</div>
+<div class="modal-body">
+    <div class="modal-img" ng-hide="!imageSrc"><img ng-src="{{imageSrc}}"/></div>
+    <div class="modal-message">{{(messageType + '.' + messageKey) | translate }}</div>
+</div>
+<div class="modal-footer">
+    <button class="btn" type="button" ng-repeat="button in buttons" ng-class="{'btn-primary': button.action === 'OK'}" ng-click="onClick(button.action)">{{'MESSAGES.'+ button.key | translate}}</button>
+</div>

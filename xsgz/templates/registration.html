@@ -1,0 +1,121 @@
+<div class="scroll-container">
+    <div class="page-form">
+        <h1 class="font-ht" translate="MESSAGES.REGISTRATION_UPPER"></h1>
+        <div class="form-container">
+            <form name="registrationForm" ng-submit="register(registrationForm.$valid)" novalidate>
+                <div class="form-group">
+                    <input type="text"
+                           class="form-control input-lg"
+                           ng-attr-placeholder="{{phrases['MESSAGES.NAME_PLACEHOLDER']}}"
+                           name="name"
+                           ng-minlength="1"
+                           ng-maxlength="45"
+                           required
+                           ng-model="user.name"
+                           ng-change="onChanged()"
+                            >
+
+                    <i class="fa fa_ie fa-check success-validation-check"
+                       ng-show="registrationForm.name.$valid && !registrationForm.name.$pristine">
+                    </i>
+                    <i class="fa fa_ie fa-times error-validation-close"
+                       ng-show="registrationForm.name.$invalid && !registrationForm.name.$pristine">
+                    </i>
+
+                    <p ng-show="registrationForm.name.$invalid && !registrationForm.name.$pristine">
+                        <span class="modal-error" translate="ERROR_MESSAGES.NAME_NEEDED"></span>
+                    </p>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="email"
+                           class="form-control input-lg"
+                           ng-attr-placeholder="{{phrases['MESSAGES.EMAIL_PLACEHOLDER']}}"
+                           name="email"
+                           ng-pattern="/^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,4}$/i"
+                           required
+                           ng-model="user.email"
+                           ng-change="onChanged()"
+                            >
+
+                    <i class="fa fa_ie fa-check success-validation-check"
+                       ng-show="registrationForm.email.$valid && !registrationForm.email.$pristine"></i>
+                    <i class="fa fa_ie fa-times error-validation-close"
+                       ng-show="registrationForm.email.$invalid && !registrationForm.email.$pristine">
+                    </i>
+
+                    <p ng-show="registrationForm.email.$invalid && !registrationForm.email.$pristine">
+                        <span class="modal-error" translate="ERROR_MESSAGES.EMAIL_NEEDED"></span>
+                    </p>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="password"
+                           class="form-control input-lg"
+                           ng-attr-placeholder="{{phrases['MESSAGES.PASSWORD_PLACEHOLDER']}}"
+                           name="password"
+                           id="password"
+                           required
+                           ng-model="user.password"
+                           ng-change="onChanged()"
+                            >
+                    <i class="fa fa_ie fa-check success-validation-check"
+                       ng-show="registrationForm.password.$valid && !registrationForm.password.$pristine"></i>
+                    <i class="fa fa_ie fa-times error-validation-close"
+                       ng-show="registrationForm.password.$invalid && !registrationForm.password.$pristine"
+                       data-tooltip-placement="bottom">
+                    </i>
+
+                    <p ng-show="registrationForm.password.$invalid && !registrationForm.password.$pristine">
+                        <span class="modal-error" translate="ERROR_MESSAGES.PASSWORD_NEEDED"></span>
+                    </p>
+
+                </div>
+
+                <div class="form-group">
+                    <input type="password"
+                           class="form-control input-lg"
+                           ng-attr-placeholder="{{phrases['MESSAGES.PASSWORD_CONFIRM_PLACEHOLDER']}}"
+                           name="confirmpassword"
+                           required
+                           ng-model="user.confirmPassword"
+                           ng-change="onChanged()"
+                           pwd-check="password"
+                            >
+
+                    <i class="fa fa_ie fa-check success-validation-check"
+                       ng-show="registrationForm.confirmPassword.$valid && !registrationForm.confirmPassword.$pristine && !registrationForm.confirmPassword.$error.pwdMatch"></i>
+
+                    <i class="fa fa_ie fa-times error-validation-close"
+                       ng-show="user.confirmPassword && registrationForm.confirmPassword.$invalid &&
+                            !registrationForm.confirmPassword.$pristine &&
+                            registrationForm.confirmPassword.$error.pwdMatch ">
+                    </i>
+
+                    <p ng-show="registrationForm.password.$invalid && !registrationForm.password.$pristine && registrationForm.confirmPassword.$error.pwdMatch">
+                        <span class="modal-error" translate="ERROR_MESSAGES.PASSWORD_NOT_MATCH"></span>
+                    </p>
+
+                </div>
+
+                <div class="form-group">
+                    <button type="submit"
+                            class="btn btn-primary btn-lg btn-block font-ht"
+                            ng-disabled="!registrationForm.$valid"
+                            translate="MESSAGES.SUBMIT">
+                    </button>
+                </div>
+
+                <p ng-show="genericError" >
+                    <span class="modal-error" translate="ERROR_MESSAGES.GENERIC"></span>
+                </p>
+
+                <p ng-show="registrationForm.email.$invalid && !registrationForm.email.$pristine ||
+                        registrationForm.password.$invalid && !registrationForm.password.$pristine">
+                    <span class="modal-error" translate="ERROR_MESSAGES.GENERIC"></span></p>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+<div class="scroll-container">
+    <div class="page-form">
+        <image src="/xsgz/assets/images/angular.png" />
+        <h1 class="font-ht" translate="MESSAGES.LOGIN_UPPER"></h1>
+        <div class="form-container">
+            <form class="form" name="loginForm" ng-submit="login(loginForm.$valid)" novalidate>
+                <div class="form-group" ng-form="form1">
+                    <input type="email"
+                           class="form-control input-lg"
+                           ng-attr-placeholder="{{phrases['MESSAGES.EMAIL_PLACEHOLDER']}}"
+                           name="email"
+                           ng-pattern="/^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,4}$/i"
+                           required
+                           ng-model="user.email"
+                           ng-change="onChanged()"
+                    >
+
+                    <i class="fa fa_ie fa-check success-validation-check"
+                       ng-show="form1.$valid && !form1.$pristine"></i>
+                    <i class="fa fa_ie fa-times error-validation-close"
+                       ng-show="form1.$invalid && !form1.$pristine">
+                    </i>
+
+                    <p ng-show="form1.$invalid && !form1.email.$pristine">
+                        <span class="modal-error" translate="ERROR_MESSAGES.EMAIL_FORMAT_ERROR"></span>
+                    </p>
+
+                </div>
+                <div class="form-group" ng-form="form3">
+                    <input type="password"
+                           class="form-control input-lg"
+                           ng-attr-placeholder="{{phrases['MESSAGES.PASSWORD_PLACEHOLDER']}}"
+                           name="password"
+                           required
+                           ng-model="user.password"
+                           ng-change="onChanged()"
+                            >
+
+                    <i class="fa fa_ie fa-check success-validation-check"
+                       ng-show="form3.password.$valid && !form3.password.$pristine"></i>
+                    <i class="fa fa_ie fa-times error-validation-close"
+                       ng-show="form3.password.$invalid && !form3.password.$pristine"
+                       data-tooltip-placement="bottom">
+                    </i>
+
+                    <p ng-show="form3.password.$invalid && !form3.password.$pristine">
+                        <span class="modal-error" translate="ERROR_MESSAGES.PASSWORD_NEEDED"></span>
+                    </p>
+
+                </div>
+                <div class="form-group">
+                    <button type="submit"
+                            class="btn btn-primary btn-lg btn-block font-ht"
+                            ng-disabled="!form3.password.$valid || !form1.email.$valid"
+                            translate="MESSAGES.SUBMIT">
+                    </button>
+                </div>
+                <p ng-show="genericError" >
+                    <span class="modal-error" translate="ERROR_MESSAGES.GENERIC"></span>
+                </p>
+
+                <p ng-show="loginForm.email.$invalid && !loginForm.email.$pristine ||
+                            loginForm.password.$invalid && !loginForm.password.$pristine">
+                    <span class="modal-error" translate="ERROR_MESSAGES.GENERIC"></span></p>
+            </form>
+        </div>
+    </div>
+</div>

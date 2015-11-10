@@ -1,0 +1,17 @@
+<div class="scroll-container-small stock-out-sheets-container">
+    <h1 class="font-ht" translate="MESSAGES.DAILY_SMALL_BAGS_SUMMARY"></h1>
+    <div class="row page-content container-fluid orders-summary-container">
+        <table>
+            <tr>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th ng-repeat="product in productsData" align="center"><div>{{product.name}}</div></th>
+            </tr>
+            <tr ng-repeat="orderSummary in ordersSummaryData">
+                <td class="font-ht">{{orderSummary.name}}</td>
+                <td>{{orderSummary.city}}</td>
+                <td ng-repeat="quantity in orderSummary.orders track by $index">{{quantity}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

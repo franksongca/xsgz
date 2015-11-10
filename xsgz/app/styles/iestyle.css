@@ -1,0 +1,329 @@
+
+
+/* IE 10+ Fixes are here Internet Explorer*/ 
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+i.shortenlink, i.shortenlink-post {
+  -ms-transform: rotate(-45deg);
+}
+
+.home-menu-lg {
+  display: -ms-flexbox;
+}
+
+.home-menu-lg ul.dropdown-menu li a {
+  color: #000;
+}
+
+.feed-gallery-container{
+    overflow-y: hidden !important;
+	padding-right:17px !important;
+}
+
+.feed-gallery-container:hover{
+    overflow-y: scroll !important;
+	padding-right:0px !important;
+}
+
+  .fa_ie {
+	      display: inline-block;
+		  font: normal normal normal 0px/1 FontAwesome;
+		  font-size: inherit;
+		  text-rendering: auto;
+		  float: right;
+		  background: white;
+		  width: 20px;
+		  height: 30px;
+		  padding-top:4px;
+		  margin-top: 11px;
+		  margin-right: 13px;
+  }
+  
+.fb-feed-position-comments{
+	margin-left:0px;
+}  
+  
+
+  .panel-group-fb{
+	  margin-left:80px;
+ }
+
+  img.modal-avatar-likes-padding{
+    margin-right:22px;
+    margin-left:5px;
+    
+  }
+    
+  .ie_industry_icons{
+    margin-right:6px !important;
+	margin-top:9px !important;
+  }  
+  
+.img-feed-post-content-comments{
+	max-height: 43px;
+	overflow-y: auto;
+	height: 43px;
+	overflow-y: hidden;
+    word-wrap: break-word;
+    width: 67%;
+    float: left;
+    margin-left:20px;
+	margin-top:15px;
+	margin-bottom:15px;
+}
+
+.img-feed-post-content-comments:hover {
+	overflow-y:scroll !important; 
+}
+
+
+
+.reg-container{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('/assets/images/loginbg.jpg');
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/images/loginbg.jpg', sizingMethod='scale');
+  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/images/loginbg.jpg', sizingMethod='scale')";
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding-bottom:-200px; 
+  overflow:hidden;
+}
+
+  i.shortenlink{
+    -ms-transform: rotate(-45deg);
+  }
+
+  .feed-img-box{
+    max-width: none;
+  }
+
+  .img-modalt-uploaded-dp-container {
+    min-height: 400px;
+  }
+
+  .social-network-post-fb {
+    margin-top: 4px;
+  }
+
+  .post-avatar-padding{
+    padding-top: 13px;
+  }
+  
+  
+  .image-modal-feed-comments{
+	  padding-right:10px !important;
+	  margin-bottom:-20px !important;
+	   
+  }
+  
+  .img-modal-facebook-extras-box .fb-feed-panel-body{
+      height:auto;
+      /*overflow-y: auto;*/
+   }
+
+  .image-modal-comments{
+	  overflow: hidden !important; 
+   } 
+   
+  .image-modal-like-comments{
+	  overflow: hidden !important; 
+   }     
+
+  .fb-feed-panel-body{
+	overflow-y: hidden !important; 
+	overflow-y: auto !important; 
+  }
+  
+   .fb-feed-panel-body:hover {
+	overflow-y: hidden !important; 
+	overflow-y: auto !important; 	
+  } 
+ 
+   .fb-feed-panel-likes{
+	overflow-y: hidden !important; 
+  }
+  
+   .fb-feed-panel-likes:hover {
+	overflow-y: auto !important; 	
+  } 
+
+   .fb-likes-list-feed{
+	 margin-left: -10px !important; 	  
+   }
+ 
+  #navcontainer{
+    margin-left: -34px;
+    max-height: none !important; 
+    overflow-y: auto;
+    overflow-x: hidden;
+  } 
+
+  #navcontainer:hover{
+    margin-left: -34px;
+    max-height: none !important; 
+    overflow-y: auto;
+    overflow-x: hidden;
+  } 
+
+
+  .galleryImg{
+    -ms-transform: translate(-50deg);
+  }
+  
+  .smart-goal-icon-box-letter > p{
+    display: inline;
+  }
+
+  .fa_promo_ie {
+      font-size: inherit;
+      text-rendering: auto;
+      float: right;
+      background: white;
+      margin-top: 0px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      font-size: 19px;
+  }
+
+
+  .fa::-ms-clear {
+      display:none;
+
+  }
+
+  .form-control::-ms-clear  {
+      display:none;
+  }
+
+  .form-control::-ms-reveal  {
+      display:none;
+  }
+
+  .fa-sign-out{
+    cursor:pointer;
+  }
+
+  .funnelgraphic {
+    top: 20%;
+  }
+
+  .feed-gallery-container{
+    display: none;
+  }
+  
+  .page-connect-footer{
+      margin-right: 5px;
+  }
+  
+  .settings-spacer{
+	height:0px; 
+	width:auto;
+	display:none;
+}
+  
+
+}
+
+
+
+/*Mid size media query*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 850px) { 
+  .content2 {
+    margin-left: 70px;
+    float:left;
+  }
+  .feed-gallery-container{
+    display: none;
+  }
+}
+
+
+/*Small size media query*/
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (max-width: 480px) { 
+
+  .content2 {
+    margin-left: 50px;
+    float:left;
+  }
+
+  .no-news-feed {
+    margin: 10px;
+  }
+
+  .notification-bar-container {
+    height: 40px;
+    padding: 5px 10px;
+    background-color: rgba(40, 70, 91, 0.88);
+    position: relative;
+    top: 33px;
+    left: 25px;
+    color: white;
+  }
+
+  .notification-bar-container > p:before {
+    content: "\f021";
+    font-family: FontAwesome;
+  }
+
+  #new-feed-post-picture{
+    opacity:0;
+    float: right;
+    position: relative;
+    top: 2px;
+      margin-right: -20px;
+      background-color: #000000;
+      padding-left: 40px;
+      margin-left: 40px;
+  }
+  #new-feed-post-video {
+    opacity: 0;
+    width: 180px; /* have to set the width to allow the button in this tag fully displayed*/
+    padding-left: 25px; /* just allow the pointer cursor */
+    background-color: #000000;
+    cursor: hand;
+    font-size: 10000px; /* This is the main part. */
+  }
+  .feed-gallery-container{
+    display: none;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 850px) and (max-width: 1223px) { 
+    .smartrecgraphic{
+      top: 25%;
+    }
+}
+
+/*Max width media query*/
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 1224px) { 
+    .smartrecgraphic{
+      top: 2%;
+      transform: scale(0.8, 0.8);
+      -ms-transform: scale(0.8, 0.8);
+      -webkit-transform: scale(0.8, 0.8);
+    }
+    .feed-gallery-ul{
+      position: relative;
+      /*right: -2em; commented out to fix offset problem in IE*/
+    }
+    .img-modal-uploaded-dp-container{
+      min-height: 400px;
+    }
+    i.shortenlink{
+      -ms-transform: rotate(-45deg);
+    }
+    .feed-gallery-container{
+      display: inline-block;
+    }
+    .refresh-feedly-btn {
+        margin-right: 15px;
+        border: none;
+        background-color: transparent;
+    }
+}
+
+
+
+

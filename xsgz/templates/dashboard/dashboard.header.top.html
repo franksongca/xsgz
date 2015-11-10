@@ -1,0 +1,24 @@
+<img src="/xsgz/assets/images/brand.png" height="50" style="opacity: 0.5;" />
+<ul class="header-menu">
+    <li ng-repeat="(key, value) in headerMenuItems"
+        key="{{key}}"
+        value="{{value}}"
+        ng-hide="featureStatus === key"
+        featureStatus="{{featureStatus}}"
+            >
+        <a ng-click="onActionItemClicked(key)" class="pointer" key="{{key}}">{{value}}</a>
+        <span ng-hide="key === headerMenuItems.length - 1">&nbsp;|&nbsp;</span>
+    </li>
+</ul>
+
+<div class="btn-group drop-down-more-menu" dropdown keyboard-nav>
+    <button type="button" class="btn btn-danger" dropdown-toggle>
+        <i class="fa fa-th"></i>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-right right-menu" role="menu" aria-labelledby="simple-btn-keyboard-nav">
+        <li role="menuitem" ng-repeat="(key, value) in headerMenuItems" ng-hide="featureStatus === key"  key="{{key}}"
+            value="{{value}}" featureStatus="{{featureStatus}}">
+            <a ng-click="onActionItemClicked(key)" key="{{key}}" class="pointer">{{value}}</a>
+        </li>
+    </ul>
+</div>

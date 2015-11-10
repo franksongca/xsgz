@@ -1,0 +1,16 @@
+<div class="container scroll-container-small stock-out-sheets-container">
+
+    <div ng-show="!orders || !orders.length">
+        <h2 class="font-ht" style="color: red;" translate="ERROR_MESSAGES.NO_DATA_FOR_THE_DAY"></h2>
+    </div>
+
+    <div ng-repeat="sheet in orders" ng-show="!!orders && orders.length">
+        <h1 class="font-ht" translate="MESSAGES.STOCK_OUT_SHEET_TITLE"></h1>
+
+        <div ng-include="'/xsgz/templates/dashboard/stock.out.sheet.body.html'"></div>
+        <div ng-include="'/xsgz/templates/dashboard/stock.out.sheet.messages.html'"></div>
+        <hr>
+        <div ng-include="'/xsgz/templates/dashboard/stock.out.sheet.body.html'"></div>
+        <div class="page-break"></div>
+    </div>
+</div>

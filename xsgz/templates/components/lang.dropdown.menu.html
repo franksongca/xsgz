@@ -1,0 +1,9 @@
+<button type="button" class="btn btn-danger">{{currentLangName}}</button>
+<button type="button" class="btn btn-danger" dropdown-toggle>
+    <span class="caret"></span>
+    <span class="sr-only">Split button!</span>
+</button>
+<ul class="dropdown-menu" role="menu" aria-labelledby="split-button">
+    <li role="menuitem" ng-repeat="lang in langs"><a ng-click="onLangItemClicked(lang.code)" key="{{lang.key}}">{{lang.name}}</a></li>
+</ul>
+

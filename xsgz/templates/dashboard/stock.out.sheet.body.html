@@ -1,0 +1,81 @@
+<div class="page-inner-container">
+    <div class="row child-border-top-left">
+        <div class="col-xs-2 font-ht text-align-left" translate="MESSAGES.TABLE_RECEIVER"></div>
+        <div class="col-xs-5 text-align-left">{{sheet.orderInfo.receiverName}}</div>
+        <div class="col-xs-2 font-ht" translate="MESSAGES.TABLE_DELIVER_DATE"></div>
+        <div class="col-xs-3 text-align-right">{{sheet.orderInfo.deliverDate}}&nbsp;</div>
+    </div>
+
+    <div class="row child-border-top-left">
+        <div class="col-xs-2 font-ht text-align-left" translate="MESSAGES.TABLE_PHONE"></div>
+        <div class="col-xs-10 text-align-left">{{sheet.orderInfo.telephone}}</div>
+    </div>
+
+    <div class="row child-border-top-left">
+        <div class="col-xs-2 font-ht text-align-left" translate="MESSAGES.TABLE_ADDRESS"></div>
+        <div class="col-xs-3 text-align-left">{{sheet.orderInfo.addressProv}}</div>
+        <div class="col-xs-3 text-align-left">{{sheet.orderInfo.addressCity}}</div>
+        <div class="col-xs-4 text-align-left">{{sheet.orderInfo.addressDistrict}}</div>
+    </div>
+    <div class="row child-border-top-left">
+        <div class="col-xs-2">&nbsp;</div>
+        <div class="col-xs-10 text-align-left">{{sheet.orderInfo.address}}</div>
+    </div>
+
+    <div class="row child-border-top-left" ng-hide="sheet.orderInfo.giftPackage">
+        <div class="col-xs-2 font-ht text-align-center" translate="MESSAGES.TABLE_PRODUCT"></div>
+        <div class="col-xs-2 font-ht text-align-center" translate="MESSAGES.TABLE_FLAVOUR"></div>
+        <div class="col-xs-2 font-ht text-align-center" translate="MESSAGES.TABLE_QUANTITY"></div>
+        <div class="col-xs-2 font-ht text-align-center" translate="MESSAGES.TABLE_UNIT_PRICE"></div>
+        <div class="col-xs-2 font-ht text-align-center" translate="MESSAGES.TABLE_PRICE"></div>
+        <div class="col-xs-2 font-ht text-align-center" translate="MESSAGES.TABLE_NET_WEIGHT"></div>
+    </div>
+
+    <div class="row child-border-top-left" ng-show="sheet.orderInfo.giftPackage">
+        <div class="col-xs-2 font-ht text-align-center" translate="MESSAGES.TABLE_PRODUCT"></div>
+        <div class="col-xs-4 font-ht text-align-center" translate="MESSAGES.TABLE_FLAVOUR"></div>
+        <div class="col-xs-3 font-ht text-align-center" translate="MESSAGES.TABLE_QUANTITY"></div>
+        <div class="col-xs-3 font-ht text-align-center" translate="MESSAGES.TABLE_NET_WEIGHT"></div>
+    </div>
+
+    <div class="row child-border-top-left" ng-repeat="order in sheet.orderList" ng-hide="sheet.orderInfo.giftPackage || !order.quantity">
+        <div class="col-xs-2 text-align-left">{{order.prodName}}</div>
+        <div class="col-xs-2 text-align-left">{{order.flavour}}</div>
+        <div class="col-xs-2 text-align-right">{{order.quantity}}</div>
+        <div class="col-xs-2 text-align-right">{{order.unitPrice}}</div>
+        <div class="col-xs-2 text-align-right">{{order.price}}</div>
+        <div class="col-xs-2 text-align-right">{{order.netWeight}} g</div>
+    </div>
+
+    <div class="row child-border-top-left" ng-repeat="order in sheet.orderList" ng-show="sheet.orderInfo.giftPackage && order.quantity">
+        <div class="col-xs-2 text-align-left">{{order.prodName}}</div>
+        <div class="col-xs-4 text-align-left">{{order.flavour}}</div>
+        <div class="col-xs-3 text-align-right">{{order.quantity}}</div>
+        <div class="col-xs-3 text-align-right">{{order.netWeight}} g</div>
+    </div>
+
+    <div class="row child-border-top-left">
+        <div>&nbsp;</div>
+    </div>
+
+    <div class="row child-border-top-left">
+        <div class="col-xs-2">&nbsp;</div>
+        <div class="col-xs-2 font-ht" translate="MESSAGES.TABLE_TOTAL_BAGS"></div>
+        <div class="col-xs-1 font-ht">{{sheet.orderInfo.totalBags}}</div>
+        <div class="col-xs-2 font-ht" translate="MESSAGES.TABLE_TOTAL_VALUE"></div>
+        <div class="col-xs-1 font-ht">{{sheet.orderInfo.totalPrice}}</div>
+        <div class="col-xs-2 font-ht" translate="MESSAGES.TABLE_TOTAL_NET_WEIGHT"></div>
+        <div class="col-xs-2 font-ht">{{sheet.orderInfo.totalNetWeight/1000}} kg</div>
+    </div>
+
+    <div class="row child-border-top-left">
+        <div class="col-xs-2 font-ht text-align-left" translate="MESSAGES.CUSTOMER_COMMENTS"></div>
+        <div class="col-xs-10 text-align-left">{{sheet.orderInfo.customerComments}}&nbsp;</div>
+    </div>
+
+    <div class="row child-border-top-left child-border-bottom">
+        <div class="col-xs-2 font-ht text-align-left" translate="MESSAGES.TABLE_COMMENTS"></div>
+        <div class="col-xs-10 text-align-left">{{sheet.orderInfo.comments}}&nbsp;</div>
+    </div>
+    <br>
+</div>
